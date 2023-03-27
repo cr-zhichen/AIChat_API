@@ -1,0 +1,637 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ChatGPT_API</name>
+    </assembly>
+    <members>
+        <member name="T:ChatGPT_API.Controllers.ApiRequestController">
+            <summary>
+            用来请求API的接口
+            </summary>
+            
+        </member>
+        <member name="M:ChatGPT_API.Controllers.ApiRequestController.Chat(ChatGPT_API.Controllers.ApiRequestController.IncomingContent)">
+            <summary>
+            聊天接口
+            </summary>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ChatGPT_API.Controllers.ApiRequestController.FindAllHistoryRecord">
+            <summary>
+            查看全部历史记录
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ChatGPT_API.Controllers.ApiRequestController.DeleteChatRecord(ChatGPT_API.Controllers.ApiRequestController.idClass)">
+            <summary>
+            删除聊天记录
+            </summary>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ChatGPT_API.Controllers.ApiRequestController.DeleteAllChatRecord">
+            <summary>
+            删除所有历史记录
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ChatGPT_API.Controllers.ApiRequestController.GetChatRecord(ChatGPT_API.Controllers.ApiRequestController.idClass)">
+            <summary>
+            获取聊天记录
+            </summary>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ChatGPT_API.Controllers.ApiRequestController.idClass">
+            <summary>
+            传入id类
+            </summary>
+        </member>
+        <member name="T:ChatGPT_API.Controllers.ApiRequestController.IncomingContent">
+            <summary>
+            用户传入内容
+            </summary>
+        </member>
+        <member name="T:ChatGPT_API.Controllers.ApiRequestController.Parameters">
+            <summary>
+            传入OpenAI的参数
+            </summary>
+        </member>
+        <member name="P:ChatGPT_API.Controllers.ApiRequestController.Parameters.model">
+            <summary>
+            模型名称
+            </summary>
+        </member>
+        <member name="P:ChatGPT_API.Controllers.ApiRequestController.Parameters.messages">
+            <summary>
+            消息列表
+            </summary>
+        </member>
+        <member name="T:ChatGPT_API.Controllers.UserController">
+            <summary>
+            涉及到用户的接口
+            </summary>
+        </member>
+        <member name="M:ChatGPT_API.Controllers.UserController.Register(ChatGPT_API.Controllers.UserController.RegisterData,System.Int32)">
+            <summary>
+            用户注册
+            </summary>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ChatGPT_API.Controllers.UserController.ResetPassword(ChatGPT_API.Controllers.UserController.RegisterData,System.Int32)">
+            <summary>
+            重置密码
+            </summary>
+            <param name="data"></param>
+            <param name="code"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ChatGPT_API.Controllers.UserController.VenerateVerificationCode(System.String)">
+            <summary>
+            发送邮箱验证码
+            </summary>
+            <param name="email"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ChatGPT_API.Controllers.UserController.Login(ChatGPT_API.Controllers.UserController.LoginData)">
+            <summary>
+            用户登录
+            </summary>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ChatGPT_API.Controllers.UserController.Tourists">
+            <summary>
+            游客登录
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ChatGPT_API.Controllers.UserController.GenerateActivationCode(ChatGPT_API.Controllers.UserController.GenerateActivationCodeClass)">
+            <summary>
+            生成激活码
+            </summary>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ChatGPT_API.Controllers.UserController.UseActivationCode(ChatGPT_API.Controllers.UserController.ActivationCode)">
+            <summary>
+            使用激活码
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ChatGPT_API.Controllers.UserController.ViewUserInformation">
+            <summary>
+            查看用户信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:ChatGPT_API.Controllers.UserController.GenerateActivationCodeClass">
+            <summary>
+            激活码传入类
+            </summary>
+        </member>
+        <member name="P:ChatGPT_API.Controllers.UserController.GenerateActivationCodeClass.num">
+            <summary>
+            生成数量
+            </summary>
+        </member>
+        <member name="P:ChatGPT_API.Controllers.UserController.GenerateActivationCodeClass.usageCount">
+            <summary>
+            这个激活码能使用的次数
+            </summary>
+        </member>
+        <member name="T:ChatGPT_API.Controllers.UserController.ActivationCode">
+            <summary>
+            激活码传入类
+            </summary>
+        </member>
+        <member name="T:ChatGPT_API.Controllers.UserController.LoginData">
+            <summary>
+            登录传入类
+            </summary>
+        </member>
+        <member name="T:ChatGPT_API.Controllers.UserController.RegisterData">
+            <summary>
+            注册传入类
+            </summary>
+        </member>
+        <member name="T:ChatGPT_API.Entity.Db.ActivationCodeEntity">
+            <summary>
+            用来保存激活码
+            </summary>
+        </member>
+        <member name="P:ChatGPT_API.Entity.Db.ActivationCodeEntity.ID">
+            <summary>
+            激活码id
+            </summary>
+        </member>
+        <member name="P:ChatGPT_API.Entity.Db.ActivationCodeEntity.Code">
+            <summary>
+            激活码
+            </summary>
+        </member>
+        <member name="P:ChatGPT_API.Entity.Db.ActivationCodeEntity.CodeGrade">
+            <summary>
+            激活码等级
+            </summary>
+        </member>
+        <member name="P:ChatGPT_API.Entity.Db.ActivationCodeEntity.RemainingTimes">
+            <summary>
+            激活码的剩余使用次数
+            </summary>
+        </member>
+        <member name="T:ChatGPT_API.Entity.Db.CodeGradeEntity">
+            <summary>
+            记录激活码等级的表
+            </summary>
+        </member>
+        <member name="P:ChatGPT_API.Entity.Db.CodeGradeEntity.ID">
+            <summary>
+            id
+            </summary>
+        </member>
+        <member name="P:ChatGPT_API.Entity.Db.CodeGradeEntity.UsageTime">
+            <summary>
+            可使用时间 -1:永久 其他:时间（单位天）
+            </summary>
+        </member>
+        <member name="P:ChatGPT_API.Entity.Db.CodeGradeEntity.UsageFrequency">
+            <summary>
+            周期内可使用次数 -1:无限 其他:次数
+            </summary>
+        </member>
+        <member name="T:ChatGPT_API.Entity.Db.HistoryMessagesEntity">
+            <summary>
+            用来保存历史记录中的消息
+            </summary>
+        </member>
+        <member name="P:ChatGPT_API.Entity.Db.HistoryMessagesEntity.ID">
+            <summary>
+            历史记录消息的id
+            </summary>
+        </member>
+        <member name="P:ChatGPT_API.Entity.Db.HistoryMessagesEntity.Role">
+            <summary>
+            消息的发送人
+            </summary>
+        </member>
+        <member name="P:ChatGPT_API.Entity.Db.HistoryMessagesEntity.Content">
+            <summary>
+            消息内容
+            </summary>
+        </member>
+        <member name="T:ChatGPT_API.Entity.Db.HistoryRecordEntity">
+            <summary>
+            数据库中的历史记录表
+            </summary>
+        </member>
+        <member name="P:ChatGPT_API.Entity.Db.HistoryRecordEntity.Id">
+            <summary>
+            历史记录id
+            </summary>
+        </member>
+        <member name="P:ChatGPT_API.Entity.Db.HistoryRecordEntity.Messages">
+            <summary>
+            历史记录列表 用类似1,2,3的方式存储映射到HistoryMessagesEntity的id
+            </summary>
+        </member>
+        <member name="P:ChatGPT_API.Entity.Db.HistoryRecordEntity.UID">
+            <summary>
+            记录历史记录的用户
+            </summary>
+        </member>
+        <member name="T:ChatGPT_API.Entity.Db.UserEntity">
+            <summary>
+            数据库中的用户表
+            </summary>
+        </member>
+        <member name="P:ChatGPT_API.Entity.Db.UserEntity.UID">
+            <summary>
+            用户UID
+            </summary>
+        </member>
+        <member name="P:ChatGPT_API.Entity.Db.UserEntity.UserName">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:ChatGPT_API.Entity.Db.UserEntity.Password">
+            <summary>
+            用户密码（md5）
+            </summary>
+        </member>
+        <member name="P:ChatGPT_API.Entity.Db.UserEntity.Email">
+            <summary>
+            用户邮箱
+            </summary>
+        </member>
+        <member name="P:ChatGPT_API.Entity.Db.UserEntity.Grade">
+            <summary>
+            用户等级 -1:管理员 0:未登录 1:普通用户 2:激活用户 
+            </summary>
+        </member>
+        <member name="P:ChatGPT_API.Entity.Db.UserEntity.ExpireDate">
+            <summary>
+            剩余时间
+            </summary>
+        </member>
+        <member name="P:ChatGPT_API.Entity.Db.UserEntity.RemainingTimes">
+            <summary>
+            可用次数 -1:不限制
+            </summary>
+        </member>
+        <member name="T:ChatGPT_API.Entity.OpenAIReEntity">
+            <summary>
+            OpenAI返回的实体
+            </summary>
+        </member>
+        <member name="P:ChatGPT_API.Entity.OpenAIReEntity.id">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ChatGPT_API.Entity.OpenAIReEntity.object">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ChatGPT_API.Entity.OpenAIReEntity.created">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ChatGPT_API.Entity.OpenAIReEntity.choices">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ChatGPT_API.Entity.OpenAIReEntity.usage">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ChatGPT_API.Entity.OpenAIReEntity.Usage.prompt_tokens">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ChatGPT_API.Entity.OpenAIReEntity.Usage.completion_tokens">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ChatGPT_API.Entity.OpenAIReEntity.Usage.total_tokens">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ChatGPT_API.Entity.OpenAIReEntity.ChoicesItem.index">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ChatGPT_API.Entity.OpenAIReEntity.ChoicesItem.message">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ChatGPT_API.Entity.OpenAIReEntity.ChoicesItem.finish_reason">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:ChatGPT_API.Entity.Message">
+            <summary>
+            消息传递
+            </summary>
+        </member>
+        <member name="P:ChatGPT_API.Entity.Message.role">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ChatGPT_API.Entity.Message.content">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:ChatGPT_API.Static.VerificationCode">
+            <summary>
+            验证码保存类
+            </summary>
+        </member>
+        <member name="T:ChatGPT_API.Static.VerificationCode.VerificationCodeTemporaryStorage">
+            <summary>
+            验证码暂存
+            </summary>
+        </member>
+        <member name="M:ChatGPT_API.Tool.Expand.Do``1(``0,System.Action{``0})">
+            <summary>
+            链式调用
+            </summary>
+            <param name="t">自身传递</param>
+            <param name="action">委托调用</param>
+            <typeparam name="T">自身类</typeparam>
+            <returns>自身传出</returns>
+        </member>
+        <member name="M:ChatGPT_API.Tool.Expand.ToMd5(System.String,System.Boolean,System.Boolean)">
+            <summary>
+            计算md5值
+            </summary>
+            <param name="str">自身传递</param>
+            <param name="toUpper">是否为大写</param>
+            <param name="to16">是否为16位md5</param>
+            <returns>md5</returns>
+        </member>
+        <member name="M:ChatGPT_API.Tool.Expand.ToMd5(System.Byte[],System.Boolean,System.Boolean)">
+            <summary>
+            计算md5值
+            </summary>
+            <param name="bytes">自身传递</param>
+            <param name="toUpper">是否为大写</param>
+            <param name="to16">是否为16位md5</param>
+            <returns>md5</returns>
+        </member>
+        <member name="M:ChatGPT_API.Tool.Expand.ToInt(System.String)">
+            <summary>
+            string转int
+            </summary>
+            <param name="str">自身传递</param>
+            <returns>int值</returns>
+            <exception cref="T:System.Exception">转换失败</exception>
+        </member>
+        <member name="M:ChatGPT_API.Tool.Expand.ToFloat(System.String)">
+            <summary>
+            string转float
+            </summary>
+            <param name="str">自身传递</param>
+            <returns>float值</returns>
+            <exception cref="T:System.Exception">转换失败</exception>
+        </member>
+        <member name="M:ChatGPT_API.Tool.Expand.ToDouble(System.String)">
+            <summary>
+            string转double
+            </summary>
+            <param name="str">自身传递</param>
+            <returns>double值</returns>
+            <exception cref="T:System.Exception">转换失败</exception>
+        </member>
+        <member name="M:ChatGPT_API.Tool.Expand.IsEmail(System.String)">
+            <summary>
+            判断是否是Email格式
+            </summary>
+            <param name="str">自身传递</param>
+            <returns></returns>
+        </member>
+        <member name="M:ChatGPT_API.Tool.Expand.IsMobile(System.String)">
+            <summary>
+            判断是否是手机号格式
+            </summary>
+            <param name="str">自身传递</param>
+            <returns></returns>
+        </member>
+        <member name="M:ChatGPT_API.Tool.Expand.IsIdCard(System.String)">
+            <summary>
+            判断是否是身份证号格式
+            </summary>
+            <param name="str">自身传递</param>
+            <returns></returns>
+        </member>
+        <member name="M:ChatGPT_API.Tool.Expand.IsUrl(System.String)">
+            <summary>
+            判断是否是Url格式
+            </summary>
+            <param name="str">自身传递</param>
+            <returns></returns>
+        </member>
+        <member name="M:ChatGPT_API.Tool.Expand.IsIpv4(System.String)">
+            <summary>
+            判断是否是ipv4格式
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ChatGPT_API.Tool.Expand.IsIpv6(System.String)">
+            <summary>
+            判断是否是ipv6格式
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ChatGPT_API.Tool.Expand.IsIp(System.String)">
+            <summary>
+            判断是否是ip格式
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ChatGPT_API.Tool.Expand.IsChinese(System.String)">
+            <summary>
+            判断是否包含中文
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ChatGPT_API.Tool.Expand.IsChineseName(System.String)">
+            <summary>
+            判断是否是中文姓名格式
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ChatGPT_API.Tool.Expand.IsEnglish(System.String)">
+            <summary>
+            判断是否是英文
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ChatGPT_API.Tool.Expand.IsUpperEnglish(System.String)">
+            <summary>
+            判断是否是大写英文
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ChatGPT_API.Tool.Expand.IsLowerEnglish(System.String)">
+            <summary>
+            判断是否是小写英文
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ChatGPT_API.Tool.Expand.IsNumber(System.String)">
+            <summary>
+            判断是否是数字
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ChatGPT_API.Tool.Expand.MaskIdCard(System.String)">
+            <summary>
+            身份证号码脱敏
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ChatGPT_API.Tool.Expand.MaskMobile(System.String)">
+            <summary>
+            手机号码脱敏
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+            <exception cref="T:System.Exception"></exception>
+        </member>
+        <member name="M:ChatGPT_API.Tool.Expand.MaskEmail(System.String)">
+            <summary>
+            邮箱脱敏
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+            <exception cref="T:System.Exception"></exception>
+        </member>
+        <member name="M:ChatGPT_API.Tool.Expand.GetTotalMilliseconds(System.DateTime)">
+            <summary>
+            获取毫秒级时间戳
+            </summary>
+            <param name="dt"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ChatGPT_API.Tool.Expand.GetTotalSeconds(System.DateTime)">
+            <summary>
+            获取秒级时间戳
+            </summary>
+            <param name="dt"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ChatGPT_API.Tool.Expand.ToDateTimeMilliseconds(System.Double)">
+            <summary>
+            毫秒级时间戳转换为DateTime
+            </summary>
+            <param name="timestamp"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ChatGPT_API.Tool.Expand.ToDateTimeSeconds(System.Double)">
+            <summary>
+            秒级时间戳转换为DateTime
+            </summary>
+            <param name="timestamp"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ChatGPT_API.Tool.Expand.GetTimeDifference(System.DateTime,System.DateTime)">
+            <summary>
+            获取时间差
+            </summary>
+            <param name="dt"></param>
+            <param name="dt2">传入时间</param>
+            <returns>返回时间差 小于0为在之前，大于0为在之后 </returns>
+        </member>
+        <member name="P:ChatGPT_API.Tool.MailConfiguration.smtpService">
+            <summary>
+            SMTP服务器
+            </summary>
+        </member>
+        <member name="P:ChatGPT_API.Tool.MailConfiguration.sendEmail">
+            <summary>
+            发件人邮箱
+            </summary>
+        </member>
+        <member name="P:ChatGPT_API.Tool.MailConfiguration.sendPwd">
+            <summary>
+            SMTP密码
+            </summary>
+        </member>
+        <member name="P:ChatGPT_API.Tool.MailConfiguration.port">
+            <summary>
+            SMTP端口
+            </summary>
+        </member>
+        <member name="P:ChatGPT_API.Tool.MailConfiguration.reAddress">
+            <summary>
+            接收邮件的地址
+            </summary>
+        </member>
+        <member name="P:ChatGPT_API.Tool.MailConfiguration.subject">
+            <summary>
+            邮件主题
+            </summary>
+        </member>
+        <member name="P:ChatGPT_API.Tool.MailConfiguration.body">
+            <summary>
+            邮件内容
+            </summary>
+        </member>
+        <member name="P:ChatGPT_API.WS.Data.messages">
+            <summary>
+            测试
+            </summary>
+        </member>
+        <member name="P:ChatGPT_API.WS.Data.chatHistory">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ChatGPT_API.WS.Root.token">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ChatGPT_API.WS.Root.data">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:ScheduledTask">
+            <summary>
+            定时任务
+            </summary>
+        </member>
+        <member name="M:ScheduledTask.Start">
+            <summary>
+            开始任务
+            </summary>
+        </member>
+    </members>
+</doc>
